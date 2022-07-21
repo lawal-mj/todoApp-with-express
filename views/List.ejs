@@ -6,10 +6,21 @@
   </head>
 
   <body>
-    <%if ( date === "sat" || date === "Sunday" ){ %>
-        <h1 style="color: red"><%= date %> Todolist</h1>
-    <%}else { %>
-        <h1 style="color: blue"><%= date %> Todolist</h1>
-    <%} %>
+
+    <h1><%= date %> </h1>
+    <ul>
+      <li>Go to school </li>
+      <li>Go back home</li>
+      <li>Let me be mad</li>
+    </ul>
+
+    <form action="/" method="post">
+        <input type="text" name="newTask" placeholder="Enter new task">
+    </form>
+
+
+
+
+
   </body>
 </html>
