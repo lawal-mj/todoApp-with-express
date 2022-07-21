@@ -6,7 +6,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // to hold the new tasks 
-var items = []
+var items = ["default task", "Go and eat food sir/ma"]
 
 app.get("/", function (req, res) {
   var today = new Date();
