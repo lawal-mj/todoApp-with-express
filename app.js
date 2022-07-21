@@ -5,6 +5,9 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// to hold the new tasks 
+var items = []
+
 app.get("/", function (req, res) {
   var today = new Date();
   var day = today.getDay();
@@ -16,15 +19,17 @@ app.get("/", function (req, res) {
   };
 
   var day = today.toLocaleDateString("en-US", options);
-  res.render('List', {date:day})
+  res.render('List', {date:day, newListItem: items})
 
 });
 
 
 app.post('/', function(req, res){
-    var newTask = req.body.newTask;
+    var item = req.body.newTask;
+    // adds new items to the new tasks list 
+    items.push(item)
+    res.redirect('/')
 
-    console.log(newTask)
 })
 
 
